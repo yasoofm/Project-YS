@@ -59,4 +59,9 @@ public class BankAccount {
     public void setTransactionHistory(ArrayList<Double> transactionHistory) {
         this.transactionHistory = transactionHistory;
     }
+
+    @Override
+    public String toString() {
+        return Integer.toString(accountNumber);
+    }
 }
