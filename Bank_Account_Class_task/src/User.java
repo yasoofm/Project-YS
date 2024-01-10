@@ -29,7 +29,7 @@ public class User {
         this.password = password;
     }
 
-    public void setBankAccount(String account) {
+    public void setBankAccount(BankAccount account) {
         this.account = account;
     }
 }
