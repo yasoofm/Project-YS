@@ -1,11 +1,34 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class User {
     private String username;
     private String password;
     private BankAccount account;
+    private static ArrayList<String> usernames = new ArrayList<String>();
+    private static ArrayList<String> passwords = new ArrayList<String>();
 
-    public User(String username, String password) {
-        this.username = username;
+    public User() {
+        Scanner in = new Scanner(System.in);
+        while (true) {
+            try {
+                System.out.print("Enter username: ");
+                String username = in.nextLine();
+                if (usernames.contains(username)) {
+                    throw new Exception("The username already exists.");
+                } else {
+                    this.username = username;
+                    usernames.add(username);
+                    break;
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        System.out.print("Enter password: ");
+        String password = in.nextLine();
         this.password = password;
+        passwords.add(password);
     }
 
     public String getUsername() {
