@@ -29,6 +29,7 @@ public class User {
         String password = in.nextLine();
         this.password = password;
         passwords.add(password);
+        in.close();
     }
 
     public String getUsername() {
