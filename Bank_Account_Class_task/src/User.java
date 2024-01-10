@@ -58,4 +58,8 @@ public class User {
     public void createAccount() {
         account = new BankAccount(0);
     }
+
+    public void display() {
+        System.out.println("Username: " + username + "\n" + "Account number: " + account);
+    }
 }

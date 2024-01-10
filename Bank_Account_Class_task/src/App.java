@@ -1,8 +1,5 @@
 public class App {
     public static void main(String[] args) throws Exception {
-
-        // BankAccount bankAccount = new BankAccount(700.45);
-        // bankAccount.deposit(50);
         // bankAccount.withdrawal(33.5);
         // bankAccount.displayingTransactionsHistory();
 
@@ -10,5 +7,9 @@ public class App {
         User saleh = new User();
         User m = new User();
 
+        System.out.println("Accounts list: " + account1.retrieveAccounts());
+        System.out.println("Accounts list: " + account2.retrieveAccounts());
+
+        yousef.display();
     }
 }
