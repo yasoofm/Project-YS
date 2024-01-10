@@ -5,11 +5,12 @@ public class User {
     private String username;
     private String password;
     private BankAccount account;
-    private static ArrayList<String> usernames = new ArrayList<String>();
+    public static ArrayList<String> usernames = new ArrayList<String>();
     private static ArrayList<String> passwords = new ArrayList<String>();
+    public static ArrayList<User> usersList = new ArrayList<User>();
+    Scanner in = new Scanner(System.in);
 
     public User() {
-        Scanner in = new Scanner(System.in);
         while (true) {
             try {
                 System.out.print("Enter username: ");
@@ -29,6 +30,10 @@ public class User {
         String password = in.nextLine();
         this.password = password;
         passwords.add(password);
+        usersList.add(this);
+    }
+
+    public void closeScanner() {
         in.close();
     }
 
