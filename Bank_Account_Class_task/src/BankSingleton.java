@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class BankSingleton {
-    private User[] user
+    private ArrayList<BankAccount> accounts;
 }
