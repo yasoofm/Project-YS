@@ -3,10 +3,9 @@ public class User {
     private String password;
     private BankAccount account;
 
-    public User(String username, String password, BankAccount account) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
-        this.account = account;
     }
 
     public String getUsername() {
@@ -31,5 +30,9 @@ public class User {
 
     public void setBankAccount(BankAccount account) {
         this.account = account;
+    }
+
+    public void createAccount() {
+        account = new BankAccount(0);
     }
 }

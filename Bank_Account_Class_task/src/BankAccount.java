@@ -2,12 +2,12 @@ import java.util.ArrayList;
 
 public class BankAccount {
 
-    private int accountNumber;
+    private static int accountNumber = 0;
     private double balance;
     private ArrayList<Double> transactionHistory;
 
-    public BankAccount(int accountNumber, double balance) {
-        this.accountNumber = accountNumber;
+    public BankAccount(double balance) {
+        accountNumber += 1;
         this.balance = balance;
         transactionHistory = new ArrayList<Double>();
 
@@ -42,10 +42,6 @@ public class BankAccount {
 
     public int getAccountNumber() {
         return accountNumber;
-    }
-
-    public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
     }
 
     public double getBalance() {
