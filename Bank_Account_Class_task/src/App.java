@@ -7,9 +7,6 @@ public class App {
         BankSingleton bankSingleton = BankSingleton.getInstance();
         Scanner in = new Scanner(System.in);
         int choice = 0;
-        User yousef = new User();
-        // User saleh = new User();
-        // User ali = new User();
 
         System.out.println("*******************************************************");
         System.out.println("\t\t\tWELCOME");
