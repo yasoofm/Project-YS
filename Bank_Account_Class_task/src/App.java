@@ -10,11 +10,13 @@ public class App {
 
         System.out.println("*******************************************************");
         System.out.println("\t\t\tWELCOME");
+        System.out.println("*******************************************************");
+
         while (true) {
             label1: {
-                System.out.println("Enter 1 to create an account");
-                System.out.println("Enter 2 to log in to an existing account");
-                System.out.println("Enter 0 exit the program");
+                System.out.println("- Enter 1 to create an account");
+                System.out.println("- Enter 2 to log in to an existing account");
+                System.out.println("- Enter 0 exit the program");
                 while (true) {
                     try {
                         choice = in.nextInt();
@@ -34,11 +36,11 @@ public class App {
                                     User loggedUser = temp;
                                     while (true) {
                                         System.out.println("*******************************************************");
-                                        System.out.println("Enter 1 to select a bank account");
-                                        System.out.println("Enter 2 to create a new bank account");
-                                        System.out.println("Enter 3 to display bank accounts");
-                                        System.out.println("Enter 9 to return to previous list");
-                                        System.out.println("Enter 0 exit the program");
+                                        System.out.println("- Enter 1 to select a bank account");
+                                        System.out.println("- Enter 2 to create a new bank account");
+                                        System.out.println("- Enter 3 to display bank accounts");
+                                        System.out.println("- Enter 9 to return to previous list");
+                                        System.out.println("- Enter 0 exit the program");
 
                                         try {
                                             choice = in.nextInt();
@@ -63,12 +65,12 @@ public class App {
                                                             System.out
                                                                     .println(
                                                                             "*******************************************************");
-                                                            System.out.println("Enter 1 to make deposit");
-                                                            System.out.println("Enter 2 to make a withdrawal");
+                                                            System.out.println("- Enter 1 to make deposit");
+                                                            System.out.println("- Enter 2 to make a withdrawal");
                                                             System.out
-                                                                    .println("Enter 3 to display transaction history");
-                                                            System.out.println("Enter 9 to return to previous list");
-                                                            System.out.println("Enter 0 to quit");
+                                                                    .println("- Enter 3 to display transaction history");
+                                                            System.out.println("- Enter 9 to return to previous list");
+                                                            System.out.println("- Enter 0 to quit");
                                                             choice = in.nextInt();
                                                             switch (choice) {
                                                                 case 1:
