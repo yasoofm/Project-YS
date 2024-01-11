@@ -2,12 +2,14 @@ import java.util.ArrayList;
 
 public class BankAccount {
 
-    private static int accountNumber = 0;
+    private int accountNumber;
+    private static int id = 1;
     private double balance;
     private ArrayList<Double> transactionHistory;
 
     public BankAccount(double balance) {
-        accountNumber += 1;
+        accountNumber = id;
+        id++;
         this.balance = balance;
         transactionHistory = new ArrayList<Double>();
 
@@ -20,8 +22,12 @@ public class BankAccount {
     }
 
     public double withdrawal(double withdrawal) {
-        transactionHistory.add(-withdrawal);
-        balance = balance - withdrawal;
+        if (balance > 0 && balance - withdrawal > 0) {
+            transactionHistory.add(-withdrawal);
+            balance = balance - withdrawal;
+        } else {
+            System.out.println("Failed to withdraw: Insufficient balance");
+        }
         return balance;
     }
 

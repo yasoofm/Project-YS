@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class BankSingleton {
     private static ArrayList<BankAccount> accounts;
     private static BankSingleton instance;
+    public static String usernameInput;
+    Scanner scanner;
 
     public static BankSingleton getInstance() {
         if (instance == null) {
@@ -24,14 +26,14 @@ public class BankSingleton {
         return accounts;
     }
 
-    public void authenticate() {
-        Scanner scanner = new Scanner(System.in);
+    public boolean authenticate() {
+        scanner = new Scanner(System.in);
         String validPassword;
         int counter = 0;
-        outer: while (counter <= 2) {
+        while (counter <= 2) {
             try {
                 System.out.print("Username: ");
-                String usernameInput = scanner.nextLine();
+                usernameInput = scanner.nextLine();
 
                 System.out.print("Password: ");
                 String passwordInput = scanner.nextLine();
@@ -40,7 +42,7 @@ public class BankSingleton {
                         validPassword = user.getPassword();
                         if (passwordInput.equals(validPassword)) {
                             System.out.println("You are successfully logged in");
-                            break outer;
+                            return true;
                         } else if (counter < 2) {
                             counter++;
                             throw new Exception("Password is incorrect");
@@ -48,14 +50,17 @@ public class BankSingleton {
                             counter++;
                             throw new Exception("Maximum attempt reached, your account is blocked");
                         }
-                    } else {
-                        throw new Exception("Username does not exist, try again.");
                     }
                 }
+                throw new Exception("Username does not exist, try again.");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
+        return false;
+    }
+
+    public void closeScanner() {
         scanner.close();
     }
 }

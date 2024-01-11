@@ -8,6 +8,7 @@ public class User {
     public static ArrayList<String> usernames = new ArrayList<String>();
     private static ArrayList<String> passwords = new ArrayList<String>();
     public static ArrayList<User> usersList = new ArrayList<User>();
+    public ArrayList<BankAccount> accounts = new ArrayList<BankAccount>();
     Scanner in = new Scanner(System.in);
 
     public User() {
@@ -45,8 +46,8 @@ public class User {
         return password;
     }
 
-    public BankAccount getBankAccount() {
-        return account;
+    public ArrayList<BankAccount> getBankAccounts() {
+        return accounts;
     }
 
     public void setUsername(String username) {
@@ -57,15 +58,16 @@ public class User {
         this.password = password;
     }
 
-    public void setBankAccount(BankAccount account) {
-        this.account = account;
-    }
-
-    public void createAccount() {
-        account = new BankAccount(0);
+    public void createAccount(double balance) {
+        account = new BankAccount(balance);
+        accounts.add(account);
     }
 
     public void display() {
-        System.out.println("Username: " + username + "\n" + "Account number: " + account);
+        System.out.println("Username: " + username);
+        System.out.println("\t\tAccount\t\tBalance");
+        for (BankAccount account : accounts) {
+            System.out.println("\t\t" + account.getAccountNumber() + "\t\t" + account.getBalance());
+        }
     }
 }
